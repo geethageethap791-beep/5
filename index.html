@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>A Little Question ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffd6e7, #fff0f5);
+      overflow: hidden;
+    }
+
+    .card {
+      width: 90%;
+      max-width: 420px;
+      padding: 35px 25px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 25px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      animation: appear 1s ease;
+    }
+
+    .heart {
+      font-size: 65px;
+      animation: heartbeat 1.3s infinite;
+    }
+
+    h1 {
+      color: #e91e63;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      font-size: 17px;
+      line-height: 1.5;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    button {
+      border: none;
+      padding: 13px 25px;
+      border-radius: 30px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    #yesBtn {
+      background: #e91e63;
+      color: white;
+    }
+
+    #yesBtn:hover {
+      transform: scale(1.08);
+    }
+
+    #noBtn {
+      background: #eee;
+      color: #444;
+    }
+
+    .message {
+      display: none;
+      margin-top: 25px;
+      font-size: 20px;
+      color: #e91e63;
+      font-weight: bold;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.15);
+      }
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+
+    <div class="heart">❤️</div>
+
+    <h1>Heyy Yuti 🥹</h1>
+
+    <p>
+      I've wanted to ask you something for a while...
+      <br><br>
+      Would you be my girlfriend? ❤️
+    </p>
+
+    <div class="buttons">
+      <button id="yesBtn">YES ❤️</button>
+      <button id="noBtn">NO</button>
+    </div>
+
+    <div class="message" id="message">
+      YAYYY 😭❤️<br>
+      You just made me really happy!
+    </div>
+
+  </div>
+
+  <script>
+
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+    const message = document.getElementById("message");
+
+    yesBtn.addEventListener("click", function() {
+
+      message.style.display = "block";
+
+      yesBtn.style.display = "none";
+      noBtn.style.display = "none";
+
+      document.querySelector("h1").innerHTML = "Thank youuu ❤️😭";
+
+      document.querySelector("p").innerHTML =
+        "I'm really happy right now 🥹❤️";
+
+    });
+
+    noBtn.addEventListener("click", function() {
+
+      document.querySelector("h1").innerHTML = "It's okay ❤️";
+
+      document.querySelector("p").innerHTML =
+        "I respect your answer. No pressure at all 🫶";
+
+      yesBtn.style.display = "none";
+      noBtn.style.display = "none";
+
+    });
+
+  </script>
+
+</body>
+</html>
